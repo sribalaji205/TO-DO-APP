@@ -1,1 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo App</title>
+<style>
+.a{
+color:white;
+font-weight:bold;
+font-family: "Times New Roman", Times, serif;
+background-color:black;
+}
+form{
+border:4px solid pink;
+border-radius:10px;
+margin:5px 30px;
+padding:8px 20px;
+background-color:#ffccff;
+color:black;
+}
 
+#rad{
+border:4px solid pink;
+border-radius:8px;
+margin:5px 70px;
+padding:8px 20px;
+background-color: #ffccff;
+}
+#page{
+color:black;
+font-size:15px;
+text-transform:capitalize;
+
+}
+
+#a1{
+ background-color:#d9d9d9;
+ border:5px solid gray;
+ color: black;
+ padding: 7px 30px;
+ text-align: center;
+ font-size: 15px;
+ border-radius:7px;
+ margin:5px 560px; 
+ font-weight:bold; 
+}
+#a1:hover{
+background-color: white;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff99cc; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffe6f2; 
+}
+
+span{
+border-radius:6px;
+}
+input{
+ width:90%;
+ background-color:white;
+ border:3px solid gray;
+ color: black;
+ padding: 7px 12px;
+ font-size: 15px;
+ margin:5px 30px;
+ border-radius:6px;
+}
+input:focus{
+border: 5px solid gray;
+}
+</style>
+
+</head>
+
+<body class="a">
+ <div style="margin-top: 10px;" class="ui container">
+ <h1 style="text-align:center; margin-right:10px;" class="ui center aligned header">TO-DO APP</h1>
+
+ <form class="ui form" action="/add" method="post">
+ <div class="field">
+ <label style="font-size:20px; margin:5px 10px;">Todo Task:</label>
+ <input type="text" name="task" placeholder="Enter Tasks..." required>
+ <label style="font-size:20px; margin:5px 10px;">Todo Notes:</label>
+ <input type="text" name="notes" placeholder="Enter Notes..." required>
+ </div>
+ <button id="a1"class="ui blue button" type="submit">ADD</button>
+ </form>
+ <div class="ab">
+ <hr style="border:2px solid white;">
+ {% for todo in value %}
+ <div id="rad" class="ui segment">
+ <p style=" font-weight:bold; font-size:20px; width:100%;" id="page" class="ui big header">TASK:  {{ todo[1] }} <br><br> NOTES:  {{ todo[2] }}</p>
+
+ {% if todo[3] == False %}
+ <span style="border:2px solid #3d3d29;  padding:5px 10px; background-color:gray;" class="ui gray label">Not Completed</span>
+ {% else %}
+ <span style="border:2px solid #00e600; padding:5px 10px; background-color:#4dff4d;" class="ui green label">Completed</span>
+ {% endif %}
+
+ <a style=" border:2px solid black; border-radius:6px; padding:6px 14px; background-color:blue; margin:10px 10px; color: white; text-decoration:none;" class="ui blue button" href="/update/{{ todo[0] }}">Update Status</a>
+ <a style="border:2px solid black; border-radius:6px; padding:6px 14px; background-color:red; margin:10px 10px; color: white; text-decoration:none;" class="ui red button" href="/delete/{{ todo[0] }}">Delete Task</a>
+ </div>
+ {% endfor %}
+ </div>
+ </div>
+</body>
+
+</html>
