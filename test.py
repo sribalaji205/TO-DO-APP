@@ -10,8 +10,9 @@ try:
       database="TEST",
       user="postgres",
       password="qwe123@")
+      print("Connected")
 except:
-      print("not connected")
+      print("Not connected")
       print("---------------------------------------------")
 
 
@@ -69,6 +70,6 @@ def open_browser():
 
 if __name__ == "__main__":
       Timer(1,open_browser).start();
-      app.run(port=2000,debug=True)
+      app.run(port=2000)
 
        
