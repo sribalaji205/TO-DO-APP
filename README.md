@@ -11,9 +11,8 @@ Install FLASK and POSTGRESQL
 # DIRECTORY
 project
 
-  |---test.py
-  
-  |---templates
+   |---test.py
+   |---templates
   
         |----lost.html
    
