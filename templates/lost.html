@@ -84,32 +84,32 @@ border: 5px solid gray;
 </head>
 
 <body class="a">
- <div style="margin-top: 10px;" class="ui container">
- <h1 style="text-align:center; margin-right:10px;" class="ui center aligned header">TO-DO APP</h1>
+ <div style="margin-top: 10px;" >
+ <h1 style="text-align:center; margin-right:10px;">TO-DO APP</h1>
 
- <form class="ui form" action="/add" method="post">
+ <form  action="/add" method="post">
  <div class="field">
  <label style="font-size:20px; margin:5px 10px;">Todo Task:</label>
  <input type="text" name="task" placeholder="Enter Tasks..." required>
  <label style="font-size:20px; margin:5px 10px;">Todo Notes:</label>
  <input type="text" name="notes" placeholder="Enter Notes..." required>
  </div>
- <button id="a1"class="ui blue button" type="submit">ADD</button>
+ <button id="a1" type="submit">ADD</button>
  </form>
  <div class="ab">
  <hr style="border:2px solid white;">
  {% for todo in value %}
  <div id="rad" class="ui segment">
- <p style=" font-weight:bold; font-size:20px; width:100%;" id="page" class="ui big header">TASK:  {{ todo[1] }} <br><br> NOTES:  {{ todo[2] }}</p>
+ <p style=" font-weight:bold; font-size:20px; width:100%;" id="page" >TASK:  {{ todo[1] }} <br><br> NOTES:  {{ todo[2] }}</p>
 
  {% if todo[3] == False %}
- <span style="border:2px solid #3d3d29;  padding:5px 10px; background-color:gray;" class="ui gray label">Not Completed</span>
+ <span style="border:2px solid #3d3d29;  padding:5px 10px; background-color:gray;" >Not Completed</span>
  {% else %}
- <span style="border:2px solid #00e600; padding:5px 10px; background-color:#4dff4d;" class="ui green label">Completed</span>
+ <span style="border:2px solid #00e600; padding:5px 10px; background-color:#4dff4d;" >Completed</span>
  {% endif %}
 
- <a style=" border:2px solid black; border-radius:6px; padding:6px 14px; background-color:blue; margin:10px 10px; color: white; text-decoration:none;" class="ui blue button" href="/update/{{ todo[0] }}">Update Status</a>
- <a style="border:2px solid black; border-radius:6px; padding:6px 14px; background-color:red; margin:10px 10px; color: white; text-decoration:none;" class="ui red button" href="/delete/{{ todo[0] }}">Delete Task</a>
+ <a style=" border:2px solid black; border-radius:6px; padding:6px 14px; background-color:blue; margin:10px 10px; color: white; text-decoration:none;"  href="/update/{{ todo[0] }}">Update Status</a>
+ <a style="border:2px solid black; border-radius:6px; padding:6px 14px; background-color:red; margin:10px 10px; color: white; text-decoration:none;"  href="/delete/{{ todo[0] }}">Delete Task</a>
  </div>
  {% endfor %}
  </div>
