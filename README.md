@@ -12,7 +12,7 @@ Install FLASK and POSTGRESQL
      project
         |---test.py
         |---templates
-           |----lost.html
+                |----lost.html
    
 Change the username,password,port,DB name in test.py file and run the app
 
