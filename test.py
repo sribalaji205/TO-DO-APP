@@ -5,15 +5,14 @@ import  webbrowser
 connection1=None
 try:
       connection1=psycopg2.connect(
-      port=12312,
+      port=#####,
       host="localhost",
       database="TEST",
       user="postgres",
-      password="qwe123@")
+      password="@@@@@@")
       print("Connected")
 except:
       print("Not connected")
-      print("---------------------------------------------")
 
 
 cursor1=connection1.cursor()
