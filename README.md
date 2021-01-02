@@ -23,3 +23,7 @@ Update status for those task And
 You can delete the task
 
 
+# SAMPLE IMAGES
+
+![alt images](https://github.com/sribalaji205/TO-DO-APP/blob/main/sample%20images/sample1.PNG) 
+
